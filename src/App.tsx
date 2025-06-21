@@ -45,7 +45,7 @@ export default function TaskApp() {
   );
 }
 
-function tasksReducer(tasks, action) {
+function tasksReducer(tasks: TaskType[], action) {
   switch (action.type) {
     case 'added': {
       return [...tasks, {

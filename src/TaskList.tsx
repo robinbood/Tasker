@@ -12,6 +12,7 @@ type TaskListProps = {
     onDeleteTask: (id: number) => void;
 };
 
+
 export default function TaskList({
     tasks,
     onChangeTask,
@@ -32,7 +33,15 @@ export default function TaskList({
     );
 }
 
-function Task({ task, onChange, onDelete } : ) {
+function Task({
+  task,
+  onChange,
+  onDelete,
+}: {
+  task: TaskType;
+  onChange: (task: TaskType) => void;
+  onDelete: (id: number) => void;
+}) {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
   if (isEditing) {
